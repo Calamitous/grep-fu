@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+PATH_REPLACEMENTS = {
+                      'a' => 'app', 
+                      'c' => 'app/controllers', 
+                      'h' => 'app/helpers', 
+                      'm' => 'app/models', 
+                      'v' => 'app/views', 
+                      'p' => 'public', 
+                      'css' => 'public/stylesheets', 
+                      'js' => 'public/javascripts', 
+                      't' => 'test',
+                      's' => 'spec'
+                    }
+
+PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public/yui', '/tmp', '~']
+
+unless ARGV.size > 0
+  puts "\nUsage: #{__FILE__} [findpath] search_string\n
+    Where findpath is one of the following:
+      any literal subdirectory
+#{PATH_REPLACEMENTS.map { |abbr, txt| "      #{abbr} - #{txt}" }.join("\n")}\n\n"
+  exit
+end
+
+search_criteria = ARGV.last
+file_path = ARGV.size == 2 ? PATH_REPLACEMENTS[ARGV.first] || ARGV.first : './'
+delicious_prunes = PRUNE_PATHS ? "-path '*#{PRUNE_PATHS.join("' -prune -o -path *'")}' -prune -o" : ''
+
+puts `find #{file_path} #{delicious_prunes} \\( -size -100000c -type f \\) -print0 | xargs -0 grep -ril "#{search_criteria}"`
+

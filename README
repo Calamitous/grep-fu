@@ -1,0 +1,39 @@
+Grep-Fu is a customized grep script, written in Ruby, for searching for text within the files of a Rails project.  The simplest, common usage:
+
+	grep-fu "def account_deletion"
+
+IMPORTANT: Grep-Fu will only work as expected if you are in the root directory of a Rails project!
+
+Just drop the grep-fu in any PATH directory, chmod 777 it (or 700, for the paranoid) and go to town.
+
+For more targeted (faster) searches, you can specify one of the following flags to narrow down the search:
+
+      a - app
+      m - app/models
+      c - app/controllers
+      v - app/views
+      h - app/helpers
+      p - public
+      css - public/stylesheets
+      js - public/javascripts
+      s - spec
+      t - test
+
+So to search only your helpers for the term "helpless":
+
+	grep-fu h helpless
+
+Multiple word searches should be surrounded by quotes:
+
+	grep-fu s "it should be tested"
+
+Running grep-fu without a search will show all available options.
+
+---
+
+Technical mumbo-jumbo
+
+Grep-Fu speeds up the searching process by only searching the files you care about.  It does this by constructing a find for grepping which "prunes" unwanted directories, such as logs and vendor plugins.  Unfortunately, find's prune options are some of the ugliest in the CLI world.  Using Ruby allows us to construct a giant ugly command that does exactly what we want.
+
+
+
