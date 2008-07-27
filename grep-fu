@@ -10,7 +10,8 @@ PATH_REPLACEMENTS = {
                       'css' => 'public/stylesheets', 
                       'js' => 'public/javascripts', 
                       't' => 'test',
-                      's' => 'spec'
+                      's' => 'spec',
+                      'vp' => 'vendor/plugins'
                     }
 
 PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public/yui', '/tmp', '~']

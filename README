@@ -18,6 +18,7 @@ For more targeted (faster) searches, you can specify one of the following flags 
       js - public/javascripts
       s - spec
       t - test
+      vp - vendor/plugins
 
 So to search only your helpers for the term "helpless":
 
