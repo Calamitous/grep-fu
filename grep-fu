@@ -6,6 +6,7 @@ PATH_REPLACEMENTS = {
                       'h' => 'app/helpers', 
                       'm' => 'app/models', 
                       'v' => 'app/views', 
+                      'l' => 'lib',
                       'p' => 'public', 
                       'css' => 'public/stylesheets', 
                       'js' => 'public/javascripts', 
