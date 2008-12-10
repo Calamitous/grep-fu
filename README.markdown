@@ -44,9 +44,9 @@ For more detail, you can add the '--verbose' flag to command:
 
 	grep-fu c budget_dragon --verbose
 
-This will output the filename, line number, and found line.  This should be used for fairly narrow searches, as it c an produce a whole lot of output.
+This will output the filename, line number, and found line.  This should be used for fairly narrow searches, as it can produce a whole lot of output.
 
-Thanks go out to [Scotty Moon]:http://github.com/scottymoon for this feature.
+Thanks go out to [Scotty Moon]: http://github.com/scottymoon for this feature.
 
 Technical mumbo-jumbo
 ---------------------
