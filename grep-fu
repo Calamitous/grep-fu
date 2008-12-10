@@ -26,11 +26,12 @@ unless ARGV.size > 0
   exit
 end
 
-verbose = (ARGV -= ['--verbose'] if ARGV.include?('--verbose'))
+clargs = ARGV
+verbose = (clargs -= ['--verbose'] if clargs.include?('--verbose'))
 options = '-rin' if verbose
 
-search_criteria = ARGV.last
-file_path = ARGV.size == 2 ? PATH_REPLACEMENTS[ARGV.first] || ARGV.first : './'
+search_criteria = clargs.last
+file_path = clargs.size == 2 ? PATH_REPLACEMENTS[clargs.first] || clargs.first : './'
 delicious_prunes = PRUNE_PATHS ? "-path '*#{PRUNE_PATHS.join("' -prune -o -path *'")}' -prune -o" : ''
 
 find_command = "find #{file_path} #{delicious_prunes} \\( -size -100000c -type f \\) -print0 | xargs -0 grep #{options} \"#{search_criteria}\""
