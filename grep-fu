@@ -16,18 +16,31 @@ PATH_REPLACEMENTS = {
                     }
 
 PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public/yui', '/tmp', '~']
+options = '-ril'
 
 unless ARGV.size > 0
-  puts "\nUsage: #{__FILE__} [findpath] search_string\n
+  puts "\nUsage: #{__FILE__} [findpath] search_string [--verbose]\n
     Where findpath is one of the following:
       any literal subdirectory
 #{PATH_REPLACEMENTS.map { |abbr, txt| "      #{abbr} - #{txt}" }.join("\n")}\n\n"
   exit
 end
 
+verbose = (ARGV -= ['--verbose'] if ARGV.include?('--verbose'))
+options = '-rin' if verbose
+
 search_criteria = ARGV.last
 file_path = ARGV.size == 2 ? PATH_REPLACEMENTS[ARGV.first] || ARGV.first : './'
 delicious_prunes = PRUNE_PATHS ? "-path '*#{PRUNE_PATHS.join("' -prune -o -path *'")}' -prune -o" : ''
 
-puts `find #{file_path} #{delicious_prunes} \\( -size -100000c -type f \\) -print0 | xargs -0 grep -ril "#{search_criteria}"`
+find_command = "find #{file_path} #{delicious_prunes} \\( -size -100000c -type f \\) -print0 | xargs -0 grep #{options} \"#{search_criteria}\""
+
+if verbose
+  `#{find_command}`.each_line do |found|
+    file_and_line = found.slice!(/^.*?:\d*?:/)
+    puts "#{file_and_line}\n\t#{found.strip}"
+  end
+else
+  puts `#{find_command}`
+end
 
