@@ -12,7 +12,8 @@ PATH_REPLACEMENTS = {
                       'js' => 'public/javascripts', 
                       't' => 'test',
                       's' => 'spec',
-                      'vp' => 'vendor/plugins'
+                      'vp' => 'vendor/plugins',
+                      'mig' => 'db/migrate'
                     }
 
 PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public/yui', '/tmp', '~']

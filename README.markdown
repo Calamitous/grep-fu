@@ -19,13 +19,18 @@ For more targeted (faster) searches, you can specify one of the following flags 
       c - app/controllers
       v - app/views
       h - app/helpers
+
       l - lib
+
       p - public
       css - public/stylesheets
       js - public/javascripts
+
       s - spec
       t - test
+
       vp - vendor/plugins
+      mig - db/migrate
 
 So to search only your helpers for the term "helpless":
 
