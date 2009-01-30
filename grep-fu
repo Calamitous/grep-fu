@@ -29,7 +29,9 @@ end
 
 clargs = ARGV
 verbose = (clargs -= ['--verbose'] if clargs.include?('--verbose'))
+color = (clargs -= ['--color'] if clargs.include?('--color'))
 options = '-rin' if verbose
+options << ' --color=always' if color
 
 search_criteria = clargs.last
 file_path = clargs.size == 2 ? PATH_REPLACEMENTS[clargs.first] || clargs.first : './'
@@ -39,7 +41,7 @@ find_command = "find #{file_path} #{delicious_prunes} \\( -size -100000c -type f
 
 if verbose
   `#{find_command}`.each_line do |found|
-    file_and_line = found.slice!(/^.*?:\d*?:/)
+    file_and_line = found.slice!(/^.*?:.*?:/)
     puts "#{file_and_line}\n\t#{found.strip}"
   end
 else
