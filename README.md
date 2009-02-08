@@ -53,6 +53,20 @@ This will output the filename, line number, and found line.  This should be used
 
 Thanks go out to [Scotty Moon](http://github.com/scottymoon) for this feature.
 
+Colors
+------
+
+If you'd like to see grep-fu's output in color, add the '--color' flag to your output:
+
+ 	grep-fu mig ExtraBiggened --color --verbose
+
+This will output your results in color.  If you'd rather just leave color on all the time, you can change the setting COLOR_ON_BY_DEFAULT to true.  If you do this, then you can use the '--no-color' flag to disable the feature:
+
+ 	grep-fu mig DouplePlusUnBiggened --no-color
+
+Thanks go out to [Joshua French](http://github.com/osake) for this feature.
+
+
 Technical mumbo-jumbo
 ---------------------
 
