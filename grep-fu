@@ -17,6 +17,7 @@ PATH_REPLACEMENTS = {
                     }
 
 PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public/yui', '/tmp', '~']
+COLOR_ON_BY_DEFAULT = false
 options = '-ril'
 
 unless ARGV.size > 0
@@ -29,7 +30,13 @@ end
 
 clargs = ARGV
 verbose = (clargs -= ['--verbose'] if clargs.include?('--verbose'))
-color = (clargs -= ['--color'] if clargs.include?('--color'))
+
+color = (clargs -= ['--color'] if (clargs.include?('--color')) || COLOR_ON_BY_DEFAULT)
+if clargs.include?('--no-color')
+  color = false
+  color = clargs -= [--no-color]
+end
+
 options = '-rin' if verbose
 options << ' --color=always' if color
 
