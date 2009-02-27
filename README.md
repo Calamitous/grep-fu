@@ -62,7 +62,7 @@ If you'd like to see grep-fu's output in color, add the '--color' flag to your o
 
 This will output your results in color.  If you'd rather just leave color on all the time, you can change the setting COLOR_ON_BY_DEFAULT to true.  If you do this, then you can use the '--no-color' flag to disable the feature:
 
- 	grep-fu mig DouplePlusUnBiggened --no-color
+ 	grep-fu mig DoublePlusUnBiggened --no-color
 
 Thanks go out to [Joshua French](http://github.com/osake) for this feature.
 
