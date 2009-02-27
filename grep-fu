@@ -16,7 +16,7 @@ PATH_REPLACEMENTS = {
                       'mig' => 'db/migrate'
                     }
 
-PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public/yui', '/tmp', '~']
+PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public/yui', '/tmp', '~', '/coverage']
 COLOR_ON_BY_DEFAULT = false
 options = '-ril'
 
