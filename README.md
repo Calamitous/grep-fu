@@ -36,11 +36,13 @@ So to search only your helpers for the term "helpless":
 
 	grep-fu h helpless
 
-Multiple word searches should be surrounded by quotes:
+Multiple word searches and searched containing special regex characters should be surrounded by quotes:
 
 	grep-fu s "it should be tested"
 
-Running grep-fu without a search will show all available options.
+	grep-fu "^[^\?] fishy fishy fishy fish$"
+
+Running grep-fu without a search will show you what options are available.
 
 I want to see what it found!
 ----------------------------
@@ -60,7 +62,7 @@ If you'd like to see grep-fu's output in color, add the '--color' flag to your o
 
  	grep-fu mig ExtraBiggened --color --verbose
 
-This will output your results in color.  If you'd rather just leave color on all the time, you can change the setting COLOR_ON_BY_DEFAULT to true.  If you do this, then you can use the '--no-color' flag to disable the feature:
+This will output your results in color.  If you'd rather just leave color on all the time, you can change the setting COLOR_ON_BY_DEFAULT in the code to true.  If you do this, then you can use the '--no-color' flag to disable the feature:
 
  	grep-fu mig DoublePlusUnBiggened --no-color
 
