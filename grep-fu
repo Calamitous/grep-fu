@@ -21,7 +21,7 @@ COLOR_ON_BY_DEFAULT = false
 options = '-ril'
 
 unless ARGV.size > 0
-  puts "\nUsage: #{__FILE__} [findpath] search_string [--verbose]\n
+  puts "\nUsage: #{__FILE__} [findpath] search_string [--verbose|--single-line]\n
     Where findpath is one of the following:
       any literal subdirectory
 #{PATH_REPLACEMENTS.map { |abbr, txt| "      #{abbr} - #{txt}" }.join("\n")}\n\n"
@@ -29,9 +29,11 @@ unless ARGV.size > 0
 end
 
 clargs = ARGV
-verbose = (clargs -= ['--verbose'] if clargs.include?('--verbose'))
 
+verbose = (clargs -= ['--verbose'] if clargs.include?('--verbose'))
+single_line = (clargs -= ['--single-line'] if clargs.include?('--single-line'))
 color = (clargs -= ['--color'] if (clargs.include?('--color')) || COLOR_ON_BY_DEFAULT)
+
 if clargs.include?('--no-color')
   color = false
   color = clargs -= [--no-color]
@@ -51,6 +53,8 @@ if verbose
     file_and_line = found.slice!(/^.*?:.*?:/)
     puts "#{file_and_line}\n\t#{found.strip}"
   end
+elsif single_line
+  puts `#{find_command}`.map { |found| found.chomp }.join(' ')
 else
   puts `#{find_command}`
 end
