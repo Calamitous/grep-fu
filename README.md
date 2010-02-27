@@ -36,9 +36,9 @@ So to search only your helpers for the term "helpless":
 
 	grep-fu h helpless
 
-Multiple word searches and searched containing special regex characters should be surrounded by quotes:
+Multiple word searches and searches containing special regex characters should be surrounded by quotes:
 
-	grep-fu s "it should be tested"
+	grep-fu s "should be tested"
 
 	grep-fu "^[^\?] fishy fishy fishy fish$"
 
