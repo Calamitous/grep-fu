@@ -35,8 +35,8 @@ single_line = (clargs -= ['--single-line'] if clargs.include?('--single-line'))
 color = (clargs -= ['--color'] if (clargs.include?('--color')) || COLOR_ON_BY_DEFAULT)
 
 if clargs.include?('--no-color')
+  clargs -= ['--no-color']
   color = false
-  color = clargs -= [--no-color]
 end
 
 options = '-rin' if verbose
