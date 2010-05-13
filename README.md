@@ -91,7 +91,8 @@ Grep-Fu speeds up the searching process by only searching the files you care abo
 
 
 
-== Note on Patches/Pull Requests
+Note on Patches/Pull Requests
+-----------------------------
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -101,6 +102,7 @@ Grep-Fu speeds up the searching process by only searching the files you care abo
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+Copyright
+---------
 
 Copyright (c) 2010 Eric Budd. See LICENSE for details.
