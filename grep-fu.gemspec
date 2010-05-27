@@ -5,22 +5,22 @@
 
 Gem::Specification.new do |s|
   s.name = %q{grep-fu}
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Budd"]
-  s.date = %q{2010-05-12}
+  s.date = %q{2010-05-27}
   s.default_executable = %q{grep-fu}
   s.description = %q{Grep-Fu is a very fast, Rails-oriented command-line helper script for grep.}
   s.email = %q{calamitous@calamitylane.com}
   s.executables = ["grep-fu"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.md"
   ]
   s.files = [
     "LICENSE",
-     "README.rdoc",
+     "README.md",
      "Rakefile",
      "VERSION",
      "bin/grep-fu",
