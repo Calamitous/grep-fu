@@ -12,7 +12,20 @@ This will display a list of files which contain the search text:
 
 *NOTE:* Grep-Fu will only work as expected if you are in the root directory of a Rails project!
 
-It's a standalone script, so you can just drop it in any PATHed directory, chmod 777 it (or 700, for the paranoid) and go to town.
+Installation
+------------
+
+Grep-Fu is now a gem:
+
+    gem install grep-fu
+
+Often, it can help reduce typing by aliasing the admittedly lengthy "grep-fu" command:
+
+    alias g='grep-fu'
+
+Putting this (or a similar shortcut) in your .bashrc or .profile will allow you to use a shorthand version of the command:
+
+    g account_deletion
 
 Even Faster
 -----------
