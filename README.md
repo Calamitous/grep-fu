@@ -120,22 +120,22 @@ The list of files with matches will display on a single line:
 Ignoring More Stuff
 ---------------------
 
-When preforming an untargeted search, Grep-fu determines which directories to skip by using the PRUNE_PATHS constant.  If you have a directory you'd like to skip searching by default, simply add its path (relative to the Rails root) to PRUNE_PATHS.
+When performing an untargeted search, Grep-fu determines which directories to skip by using the PRUNE_PATHS constant.  If you have a directory you'd like to skip searching by default, simply add its path (relative to the Rails root) to PRUNE_PATHS.
 
 For example, if you have an unusually large set of migrations, you might want to step over them by default.  Change the line
 
-    PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log']
+    PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public', '/tmp', '/coverage']
 
 to
 
-    PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/db/migrations']
+    PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public', '/tmp', '/coverage', '/db/migrations']
 
 And migrations will no longer be searched.  Note that targeted searches and specified directories always override the PRUNE_PATHS option.
 
 Technical mumbo-jumbo
 ---------------------
 
-Grep-Fu speeds up the searching process by only searching the files you care about.  It does this by constructing a find for grepping which "prunes" the following search directories
+Grep-Fu speeds up the searching process by only searching the files you care about.  It does this by constructing a "find" command which is piped into grep.  Find "prunes" the following search directories:
 
  * public
  * logs
