@@ -147,7 +147,7 @@ Grep-Fu speeds up the searching process by only searching the files you care abo
 
 Note that all these directories are still searchable with targeted searches or a directory specification; they're simply not searched by default
 
-Grep-fu also ignores files larger than 100K, which tend to be unsearchable binaries.
+Grep-fu also ignores files larger than 100K, which tend to be unsearchable binaries or SQL dumps.
 
 The pruning options for find are some of the ugliest in the CLI world.  Using Ruby allows us to construct a giant, hideous command that does exactly what we need.
 
