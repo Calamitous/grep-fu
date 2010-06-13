@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'rake'
+require 'spec/rake/spectask'
 
 begin
   require 'jeweler'
@@ -36,7 +37,12 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
+desc "Run all specs"
+Spec::Rake::SpecTask.new('run_specs') do |t|
+  t.spec_files = FileList['spec/**/*.rb']
+end
+
+task :test => [:check_dependencies, :run_specs]
 
 task :default => :test
 
