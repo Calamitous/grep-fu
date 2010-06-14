@@ -7,7 +7,6 @@ module GrepFu
 		end
 
 		def self.find_command(options)
-
 			[
 				'find',
 				options.file_path,
