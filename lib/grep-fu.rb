@@ -11,7 +11,6 @@ module GrepFu
 		options = Options.new(args)
 
 		find_command = FindBuilder.find_command(options)
-		puts find_command
 
 		if options.verbose
 			`#{find_command}`.each_line do |found|
