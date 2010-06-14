@@ -23,7 +23,7 @@ module GrepFu
 		def self.usage(file)
 			lines = ['',
 				"Usage: #{file} [findpath] search_string [--verbose|--single-line]\n",
-			"    Where findpath is one of the following:",
+				"    Where findpath is one of the following:",
 				"      any literal subdirectory",
 				Options::PATH_REPLACEMENTS.map { |abbr, txt| "      #{abbr} - #{txt}" }.join("\n"),
 			"\n\n"
