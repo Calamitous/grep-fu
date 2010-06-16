@@ -49,7 +49,7 @@ describe GrepFu::FindBuilder do
     end
 
     it "should stitch together a long, long find command" do
-      @find_command.should =~ /find path prune_list \\{ -size -100000c -type f \\} -print0 | xargs -0 grep str_opts \"crits\"/
+      @find_command.should =~ /find path prune_list .. -size -100000c -type f .. -print0 | xargs -0 grep str_opts \"crits\"/
     end
 
   end
