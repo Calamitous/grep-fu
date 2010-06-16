@@ -5,7 +5,7 @@ module GrepFu
   def self.run!(args = [])
     unless args.size > 0
       puts Options.usage(__FILE__)
-      exit
+      return
     end
 
     options = Options.new(args)
