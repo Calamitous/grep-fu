@@ -33,6 +33,11 @@ module GrepFu
 		end
 
 		def initialize(args)
+			if args.include?('--version')
+				puts "grep-fu #{File.read(File.join(File.dirname(__FILE__), '..', '..', 'VERSION'))}"
+				exit(0)
+			end
+
 			@verbose = (args -= ['--verbose'] if args.include?('--verbose'))
 			@single_line = (args -= ['--single-line'] if args.include?('--single-line'))
 

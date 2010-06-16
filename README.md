@@ -132,6 +132,17 @@ to
 
 And migrations will no longer be searched.  Note that targeted searches and specified directories always override the PRUNE_PATHS option.
 
+Version Information
+-------------------
+
+Passing the '--version' flag to grep-fu will return the current version.
+
+    grep-fu --version
+
+returns
+
+    grep-fu 0.5.0
+
 Technical mumbo-jumbo
 ---------------------
 
