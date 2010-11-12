@@ -117,6 +117,10 @@ The list of files with matches will display on a single line:
 
     ./test/unit/calamity_test.rb ./test/unit/havoc_test.rb ./test/unit/mayhem_test.rb...
 
+This is handy if you want to go ahead and load all the files it finds into a text editor.
+
+    gvim -p `gx "#TODO"`
+
 Ignoring More Stuff
 ---------------------
 
