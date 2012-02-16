@@ -5,6 +5,7 @@ module GrepFu
     PATH_REPLACEMENTS = {
       'a' => 'app', 
       'c' => 'app/controllers', 
+      'd' => 'doc', 
       'h' => 'app/helpers', 
       'm' => 'app/models', 
       'v' => 'app/views', 

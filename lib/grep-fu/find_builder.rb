@@ -1,6 +1,7 @@
 module GrepFu
   class FindBuilder
-    PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log', '/public', '/tmp', '/coverage']
+    PRUNE_PATHS = ['/.svn', '/.git', '/vendor', '/log',
+                   '/public', '/tmp', '/coverage', '/doc']
 
     def self.delicious_prunes
       "-path '*#{PRUNE_PATHS.join("' -prune -o -path '*")}' -prune -o"
