@@ -1,3 +1,10 @@
+
+NOTE:
+=====
+This project is left here for historical purposes, but it has been eclipsed by other grep replacements like [ack](https://beyondgrep.com/), [silver searcher](https://github.com/ggreer/the_silver_searcher), and [ripgrep](https://github.com/BurntSushi/ripgrep) (personally, I'm using ripgrep these days).
+
+Thank you to everyone who contributed to and benefited from grep-fu.
+
 Grep-Fu
 =======
 
